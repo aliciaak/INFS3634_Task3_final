@@ -23,8 +23,8 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_home);
 
-        gif = (GifImageView) findViewById(R.id.gif);
-        progress_bar = (ProgressBar) findViewById(R.id.progress_bar);
+        gif = findViewById(R.id.gif);
+        progress_bar = findViewById(R.id.progress_bar);
         progress_bar.setVisibility(progress_bar.VISIBLE);
 
         try {
@@ -33,15 +33,16 @@ public class SplashScreen extends AppCompatActivity {
             gif.setBytes(bytes);
             gif.startAnimation();
         } catch (IOException ex) {
+            ex.printStackTrace();
         }
 
-        //wait 2 seconds and start MainActivity
+        //wait 5 seconds and start MainActivity
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                SplashScreen.this.startActivity(new Intent(SplashScreen.this.MainActivity.class));
+                SplashScreen.this.startActivity(new Intent(SplashScreen.this, MainActivity.class));
                 SplashScreen.this.finish();
             }
-        }, 2000); //2000 = 2 seconds
+        }, 5000); //5000 = 5 seconds
     }
 }
