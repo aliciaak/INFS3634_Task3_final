@@ -1,18 +1,20 @@
-package com.example.infs3634_task3;
+package com.example.infs3634_task3.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.os.Handler;
 
 import android.content.Intent;
 import android.widget.ProgressBar;
 
-import com.felipecsl.gifimageview.library.GifImageView;
-
-import org.apache.commons.io.IOUtils;
-import android.os.Handler;
-
 import java.io.IOException;
 import java.io.InputStream;
+
+import org.apache.commons.io.IOUtils;
+
+import com.example.infs3634_task3.R;
+import com.felipecsl.gifimageview.library.GifImageView;
 
 public class SplashScreen extends AppCompatActivity {
     private GifImageView gif;
@@ -24,7 +26,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.splash_home);
 
         gif = findViewById(R.id.gif);
-        progress_bar = findViewById(R.id.progress_bar);
+        progress_bar = findViewById(R.id.progress_bar_splash);
         progress_bar.setVisibility(progress_bar.VISIBLE);
 
         try {
@@ -36,13 +38,13 @@ public class SplashScreen extends AppCompatActivity {
             ex.printStackTrace();
         }
 
-        //wait 5 seconds and start MainActivity
+        //wait 3 seconds and start MainActivity
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 SplashScreen.this.startActivity(new Intent(SplashScreen.this, MainActivity.class));
                 SplashScreen.this.finish();
             }
-        }, 5000); //5000 = 5 seconds
+        }, 3500); //3000 = 5 seconds
     }
 }
