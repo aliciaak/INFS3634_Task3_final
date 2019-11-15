@@ -67,6 +67,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="30dp"
-        android:src="@drawable/ic_star_border_white_24dp" />
+        android:src="@drawable/ic_star_normal" />
 
 </RelativeLayout>

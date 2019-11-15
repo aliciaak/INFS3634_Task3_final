@@ -1,0 +1,82 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "3fd229c79ae3e0b209f0ec4462e0bdca",
+    "entities": [
+      {
+        "tableName": "Breed",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`breed_id` TEXT NOT NULL, `name` TEXT, `origin` TEXT, `weight` TEXT, `life_span` TEXT, `dog_friendly` TEXT, `temperament` TEXT, `description` TEXT, `readmore` TEXT, PRIMARY KEY(`breed_id`))",
+        "fields": [
+          {
+            "fieldPath": "breed_id",
+            "columnName": "breed_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "origin",
+            "columnName": "origin",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "weight",
+            "columnName": "weight",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "life_span",
+            "columnName": "life_span",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dog_friendly",
+            "columnName": "dog_friendly",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "temperament",
+            "columnName": "temperament",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "readmore",
+            "columnName": "readmore",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "breed_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3fd229c79ae3e0b209f0ec4462e0bdca')"
+    ]
+  }
+}

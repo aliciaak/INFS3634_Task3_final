@@ -1,28 +1,36 @@
 package com.example.infs3634_task3;
 
-import androidx.room.Entity;
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import com.google.gson.annotations.SerializedName;
+import java.io.Serializable;
 
-import java.util.List;
+@Entity(tableName = "Breed")
+public class Breed implements Serializable {
 
-@Entity
-public class Breed {
     @PrimaryKey
-    @SerializedName("breed_id")
+    @ColumnInfo(name = "breed_id")
+    @NonNull
+    public String breed_id;
 
-    private String breed_id;
-    private String name;
-    private String catImage;
-    private String origin;
-    private String weight;
-    private String life_span;
-    private int dog_friendliness;
+    @ColumnInfo(name = "name")
+    public String name;
 
-    private String temperament;
-    private String description;
-    private String readmore;
+    @ColumnInfo(name = "origin")
+    public String origin;
+    @ColumnInfo(name = "weight")
+    public String weight;
+    @ColumnInfo(name = "life_span")
+    public String life_span;
+    @ColumnInfo(name = "dog_friendly")
+    public String dog_friendly;
 
+    @ColumnInfo(name = "temperament")
+    public String temperament;
+    @ColumnInfo(name = "description")
+    public String description;
+    @ColumnInfo(name = "readmore")
+    public String readmore;
 }
