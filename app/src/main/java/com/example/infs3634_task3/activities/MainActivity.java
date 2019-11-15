@@ -1,5 +1,7 @@
 package com.example.infs3634_task3.activities;
 
+//test github commit
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
